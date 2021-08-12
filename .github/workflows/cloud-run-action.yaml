@@ -38,7 +38,7 @@ jobs:
           gcloud run deploy stuffzo \
           --region europe-west1 \
           --set-env-vars TOPIC_SUFFIX=olber\
-          --image gcr.io/nomad-learninig/staffzo \
+          --image gcr.io/nomad-learninig/staffzo:latest \
           --platform managed \
           --allow-unauthenticated \
           --project nomad-learninig
