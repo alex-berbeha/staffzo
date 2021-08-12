@@ -1,7 +1,7 @@
 const { PubSub } = require('@google-cloud/pubsub');
 const express = require('express');
 
-const projectID = 'nomad-learninig';
+const projectID = 'staffzo-316512';
 const topicName = `event-coordinator-${process.env.TOPIC_SUFFIX}`;
 const app = express();
 const running = true;
