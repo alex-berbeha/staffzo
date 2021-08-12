@@ -27,18 +27,18 @@ jobs:
       
       - name: Build
         run: |
-          docker build -t gcr.io/${{ secrets.GCP_PROJECT_ID }}/staffzo:latest .
+          docker build -t gcr.io/nomad-learninig/staffzo:latest .
 
       - name: Push
         run: |
-          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/staffzo:latest
+          docker push gcr.io/nomad-learninig/staffzo:latest
 
       - name: Deploy
         run: |
           gcloud run deploy stuffzo \
           --region europe-west1 \
           --set-env-vars TOPIC_SUFFIX=olber\
-          --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/staffzo \
+          --image gcr.io/nomad-learninig/staffzo \
           --platform managed \
           --allow-unauthenticated \
-          --project ${{ secrets.GCP_PROJECT_ID }}
+          --project nomad-learninig
