@@ -2,12 +2,12 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-COPY ./src/package*.json ./
+COPY ./src/package*.json /usr/src/app/
 
 RUN npm install
 
-COPY ./src/ ./
+COPY ./src/index.js .
 
 EXPOSE 8080
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "index.js" ]
